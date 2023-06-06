@@ -140,6 +140,9 @@ img {
 /*#endregion generalStyles*/
 
 /*#region header*/
+.header-mobile {
+  display: none;
+}
 .header-desktop {
   position: relative;
   margin-top: 35px;
@@ -706,6 +709,9 @@ footer {
     height: 40px;
     padding: 2px;
   }
+  .header-desktop__navigation-list {
+    gap: 20px;
+  }
   .header-desktop > img {
     left: -25px;
   }
@@ -807,5 +813,99 @@ footer {
   .modal--main .close-modal {
     top: 10px;
     right: 3px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .header-desktop {
+    display: none;
+  }
+  .header-mobile {
+    display: block;
+    margin-top: 20px;
+  }
+  .header-mobile-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header-mobile-buttons a {
+    height: 38px;
+    position: relative;
+    z-index: 1;
+  }
+  .header-mobile-button {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    height: 22px;
+    width: 28px;
+    position: relative;
+    z-index: 1;
+  }
+  .header-mobile-button span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--white-color);
+    transition: all 0.4s;
+  }
+  .header-mobile-button span:first-child {
+    position: absolute;
+    top: 0;
+  }
+  .header-mobile-button span:last-child {
+    position: absolute;
+    bottom: 0;
+  }
+  .header-mobile-button.open span {
+    background-color: var(--accent-orange-color);
+  }
+
+  .header-mobile-nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 105px 15px 25px;
+    background-color: rgba(255, 255, 255, 0.95);
+    transform: translate(-100%, -100%) scale(0);
+    transition: all 0.4s;
+  }
+  .header-mobile-nav.open {
+    transform: translate(0, 0) scale(1);
+  }
+  .header-mobile-list li a,
+  .header-mobile-list li button {
+    font-weight: 700;
+    font-size: 15px;
+    text-align: center;
+  }
+  .header-mobile-list li:not(:last-child) {
+    margin-bottom: 30px;
+  }
+  .header-mobile-list li button {
+    border: none;
+    width: max-content;
+    margin: 0 auto;
+  }
+  .header-mobile-social-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+  }
+
+  .greeting__content {
+    margin-top: 68px;
+    margin-bottom: 68px;
   }
 }

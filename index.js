@@ -76,3 +76,11 @@ buttonMoreContent.addEventListener('click', function() {
     buttonMoreContent.innerHTML = 'Менше';
   }
 });
+
+const openBurgerMenu = document.querySelector('.header-mobile-button');
+const burgerMenu = document.querySelector('.header-mobile-nav');
+
+openBurgerMenu.addEventListener('click', function() {
+  openBurgerMenu.classList.toggle('open');
+  burgerMenu.classList.toggle('open');
+});
