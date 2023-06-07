@@ -597,6 +597,11 @@ footer {
 /*#endregion footer*/
 
 /*#region modal*/
+.no-scroll {
+  height: 100vh;
+  overflow: hidden;
+}
+
 .modal {
   position: fixed;
   top: 0;

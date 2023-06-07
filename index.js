@@ -43,7 +43,12 @@ const closeModalButtons = document.querySelectorAll('.close-modal')
 const openConnectModal = document.querySelector('.open-modal--aditional');
 const openMainModal = document.querySelector('.open-modal-main');
 
+function toggleScrollBody() {
+  document.body.classList.toggle('no-scroll')
+}
+
 function openModalWindow(className) {
+  toggleScrollBody();
   modalWindow.classList.add('active')
 
   modalWrappers.forEach(modalWrapper => {
@@ -56,6 +61,7 @@ function openModalWindow(className) {
 }
 
 function closeModalWindow() {
+  toggleScrollBody();
   modalWindow.classList.remove('active')
 }
 
