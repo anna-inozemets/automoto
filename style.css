@@ -376,6 +376,9 @@ img {
   min-width: 75px;
   margin-right: 20px;
 }
+.tasks__card-photo img {
+  width: 100%;
+}
 .tasks__card-text {
   margin-top: 25px;
 }
@@ -796,12 +799,14 @@ footer {
     right: 0;
     display: block;
     width: 100%;
-    height: 130px;
+    min-height: 130px;
+    max-height: 130px;
     background: linear-gradient(to bottom, transparent, #fff);
     opacity: 0;
   }
   .project__content-text.hidden::after {
     opacity: 1;
+    max-height: 0;
   }
 
   .modal--main .greeting__form {
@@ -907,5 +912,101 @@ footer {
   .greeting__content {
     margin-top: 68px;
     margin-bottom: 68px;
+  }
+
+  .tasks__card {
+    flex-basis: calc(50% - 65px);
+  }
+  .cases__buttons-wrapper {
+    gap: 10px;
+  }
+  .cases__button {
+    width: 160px;
+    gap: 5px;
+    padding: 7px;
+  }
+  .cases__cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer__content {
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .section {
+    padding-bottom: 0;
+  }
+  .container {
+    padding-right: var(--padding-container-phone);
+    padding-left: var(--padding-container-phone);
+  }
+  .title--section {
+    margin-bottom: 30px;
+  }
+
+  .background,
+  .background__color,
+  .background img {
+    height: var(--greeting-section-height-phone);
+  }
+
+  .title--greeting {
+    max-width: 215px;
+    margin-bottom: 75px;
+  }
+  .greeting__content {
+    margin-top: 85px;
+    margin-bottom: 87px;
+  }
+  .tasks__card {
+    flex-basis: 80%;
+  }
+
+  .cases__buttons {
+    margin-bottom: 30px;
+  }
+  .cases__buttons-wrapper .cases__button {
+    justify-content: center;
+  }
+  .cases__buttons-wrapper .cases__button > span {
+    display: none;
+  }
+  .cases__buttons-wrapper .cases__button {
+    width: 50px;
+  }
+  .cases__cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .cases__card {
+    max-width: 250px;
+    margin: 0 auto;
+    row-gap: 20px;
+  }
+
+  .project__content {
+    flex-direction: column;
+  }
+  .project__content-photo {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  .project__buttons {
+    flex-direction: column;
+  }
+  .project__buttons a,
+  .project__buttons button {
+    width: max-content;
+    margin: 0 auto;
+  }
+
+  footer {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin-top: 65px;
+  }
+  .footer__nav {
+    display: none;
   }
 }
