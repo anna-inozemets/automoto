@@ -90,6 +90,10 @@ img {
   object-fit: cover;
 }
 
+input, textarea, select, option {
+  font-family: 'Open Sans', sans-serif;
+}
+
 .section {
   padding-top: 35px;
   padding-bottom: 25px;
@@ -463,6 +467,9 @@ img {
 .cases__card-photo {
   margin-bottom: 10px;
 }
+.cases__card-photo img {
+  width: 100%;
+}
 .cases__card p {
   margin-left: 12px;
   font-weight: 700;
@@ -619,6 +626,9 @@ footer {
   transform: translateY(-50%);
   background-color: var(--white-color);
   border-radius: 16px;
+}
+.modal__wrapper.hidden {
+  display: none;
 }
 .modal__form {
   max-height: 80vh;
@@ -809,13 +819,13 @@ footer {
     max-height: 0;
   }
 
-  .modal--main .greeting__form {
+  .modal__wrapper--main .greeting__form {
     display: block;
   }
-  .modal--main .modal__wrapper {
+  .modal__wrapper.modal__wrapper--main {
     background-color: transparent;
   }
-  .modal--main .close-modal {
+  .modal__wrapper--main .close-modal {
     top: 10px;
     right: 3px;
   }

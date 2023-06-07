@@ -37,32 +37,43 @@ allButton.addEventListener('click', () => {
   allButton.classList.add('active');
 });
 
+const modalWindow = document.querySelector('.modal')
+const modalWrappers = document.querySelectorAll('.modal__wrapper')
+const closeModalButtons = document.querySelectorAll('.close-modal')
 const openConnectModal = document.querySelector('.open-modal--aditional');
-const closeConnectModal = document.querySelector('.close-modal--additional');
-const connectModal = document.querySelector('.modal--additional')
-
-openConnectModal.addEventListener('click', function() {
-  connectModal.classList.add('active');
-});
-
-closeConnectModal.addEventListener('click', function() {
-  connectModal.classList.remove('active');
-})
-
 const openMainModal = document.querySelector('.open-modal-main');
-const closeMainModal = document.querySelector('.close-modal--main');
-const mainModal = document.querySelector('.modal--main');
+
+function openModalWindow(className) {
+  modalWindow.classList.add('active')
+
+  modalWrappers.forEach(modalWrapper => {
+    modalWrapper.classList.add('hidden')
+
+    if (modalWrapper.classList.contains(className)) {
+      modalWrapper.classList.remove('hidden')
+    }
+  })
+}
+
+function closeModalWindow() {
+  modalWindow.classList.remove('active')
+}
+
+closeModalButtons.forEach(closeModalButton => {
+  closeModalButton.addEventListener('click', function() {
+    closeModalWindow();
+  })
+})
+openConnectModal.addEventListener('click', function() {
+  openModalWindow('modal__wrapper--additional')
+})
+openMainModal.addEventListener('click', function() {
+  openModalWindow('modal__wrapper--main')
+});
 
 const buttonMoreContent = document.querySelector('.more-project-text');
 const moreContent = document.querySelector('.project__content-text');
 
-openMainModal.addEventListener('click', function() {
-  mainModal.classList.add('active');
-});
-
-closeMainModal.addEventListener('click', function() {
-  mainModal.classList.remove('active');
-})
 
 buttonMoreContent.addEventListener('click', function() {
   const isHidden = moreContent.classList.contains('hidden');
@@ -79,8 +90,17 @@ buttonMoreContent.addEventListener('click', function() {
 
 const openBurgerMenu = document.querySelector('.header-mobile-button');
 const burgerMenu = document.querySelector('.header-mobile-nav');
+const logoImg = document.querySelector('.header-mobile-logo-img');
 
 openBurgerMenu.addEventListener('click', function() {
   openBurgerMenu.classList.toggle('open');
   burgerMenu.classList.toggle('open');
+
+  const isOpen = openBurgerMenu.classList.contains('open');
+
+  if (isOpen) {
+    logoImg.src = './images/logo--black.svg'
+  } else {
+    logoImg.src = './images/logo.svg'
+  }
 });
