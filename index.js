@@ -110,3 +110,9 @@ openBurgerMenu.addEventListener('click', function() {
     logoImg.src = './images/logo.svg'
   }
 });
+
+const imgToZoom = document.querySelector('.project__content-photo-img');
+
+imgToZoom.addEventListener('click', function() {
+  imgToZoom.classList.toggle('zoom');
+})
