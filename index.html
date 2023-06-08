@@ -171,6 +171,9 @@
               <button type="submit" class="button--submit">
                 НАДІСЛАТИ
               </button>
+              <button type="button" class="button--another-form open-modal open-modal--another-form">
+                РОЗШИРЕНА ФОРМА
+              </button>
             </form>
             <p>або</p>
             <a href="">
@@ -673,6 +676,38 @@
         </div>
       </div>
     </section>
+    <section class="section section--apps">
+      <div class="container">
+        <h2 class="title--section">
+          Рекомендовані додатки
+        </h2>
+        <div class="apps-content">
+          <div class="apps-descrption">
+            <p>
+              Додатки що дозволяють знімати порушення та одразу фіксують місце дату та час.
+            </p>
+            <div class="apps-links">
+              <a href="https://apps.apple.com/us/app/axon-capture/id680982121" target="_blank">
+                <img src="./images/app-store.svg" alt="App store">
+              </a>
+              <a href="https://play.google.com/store/apps/details?id=com.smartwalkie.olivecast&hl=ru" target="_blank">
+                <img src="./images/google-play.svg" alt="Google play">
+              </a>
+            </div>
+          </div>
+          <div class="apps-info">
+            <p>
+              Ми працюємо над створенням власного додатку, що дозволить більш зручно фіксувати та надсилати
+              матеріали в нашу базу
+            </p>
+            <a href="">
+              <img src="./images/info.svg" alt="Докладніше">
+              <strong>Докладніше</strong>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="modal">
       <div class="modal__wrapper modal__wrapper--additional hidden">
         <button type="button" class="close-modal close-modal--additional">
@@ -680,7 +715,7 @@
             <path d="M0.413849 11.6088C-0.13277 12.1554 -0.13277 13.0431 0.413849 13.5898C0.960468 14.1364 1.84818 14.1364 2.39479 13.5898L6.99951 8.98067L11.609 13.5858C12.1557 14.1324 13.0429 14.1324 13.5895 13.5858C14.1362 13.0392 14.1362 12.1515 13.5895 11.6049L8.98046 7.00016L13.5852 2.39107C14.1318 1.84445 14.1318 0.956742 13.5852 0.410123C13.0386 -0.136496 12.1508 -0.136496 11.6042 0.410123L6.99951 5.01921L2.39042 0.414495C1.8438 -0.132124 0.956095 -0.132124 0.409476 0.414495C-0.137143 0.961114 -0.137143 1.84882 0.409476 2.39544L5.01857 7.00016L0.413849 11.6092V11.6088Z"/>
           </svg>
         </button>
-        <form action="" class="modal__form">
+        <form action="" class="modal__form greeting__form">
           <input name="name" type="text" placeholder="Ім'я">
           <input name="phone" type="tel" placeholder="Телефон">
           <input name="email" type="email" placeholder="E-main">
@@ -688,14 +723,14 @@
           <button type="submit" class="button--submit">Надіслати</button>
         </form>
       </div>
-      <div class="modal__wrapper modal__wrapper--main ">
+      <div class="modal__wrapper modal__wrapper--main hidden">
         <button type="button" class="close-modal close-modal--main">
           <svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
             <path d="M0.413849 11.6088C-0.13277 12.1554 -0.13277 13.0431 0.413849 13.5898C0.960468 14.1364 1.84818 14.1364 2.39479 13.5898L6.99951 8.98067L11.609 13.5858C12.1557 14.1324 13.0429 14.1324 13.5895 13.5858C14.1362 13.0392 14.1362 12.1515 13.5895 11.6049L8.98046 7.00016L13.5852 2.39107C14.1318 1.84445 14.1318 0.956742 13.5852 0.410123C13.0386 -0.136496 12.1508 -0.136496 11.6042 0.410123L6.99951 5.01921L2.39042 0.414495C1.8438 -0.132124 0.956095 -0.132124 0.409476 0.414495C-0.137143 0.961114 -0.137143 1.84882 0.409476 2.39544L5.01857 7.00016L0.413849 11.6092V11.6088Z"/>
           </svg>
         </button>
         <div class="greeting__content-contact">
-          <form class="greeting__form">
+          <form class="greeting__form modal__form">
             <input name="city" type="text" placeholder="Місто">
             <input name="adress" type="text" placeholder="Адреса (вулиця)">
             <select name="transport">
@@ -717,6 +752,9 @@
             <button type="submit" class="button--submit">
               НАДІСЛАТИ
             </button>
+            <button type="button" class="button--another-form open-modal open-modal--another-form">
+              РОЗШИРЕНА ФОРМА
+            </button>
           </form>
           <p>або</p>
           <a href="">
@@ -727,6 +765,62 @@
               </svg>
             </span>
           </a>
+        </div>
+      </div>
+
+      <div class="modal__wrapper modal__wrapper--another-form hidden">
+        <button type="button" class="close-modal close-modal--main">
+          <svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.413849 11.6088C-0.13277 12.1554 -0.13277 13.0431 0.413849 13.5898C0.960468 14.1364 1.84818 14.1364 2.39479 13.5898L6.99951 8.98067L11.609 13.5858C12.1557 14.1324 13.0429 14.1324 13.5895 13.5858C14.1362 13.0392 14.1362 12.1515 13.5895 11.6049L8.98046 7.00016L13.5852 2.39107C14.1318 1.84445 14.1318 0.956742 13.5852 0.410123C13.0386 -0.136496 12.1508 -0.136496 11.6042 0.410123L6.99951 5.01921L2.39042 0.414495C1.8438 -0.132124 0.956095 -0.132124 0.409476 0.414495C-0.137143 0.961114 -0.137143 1.84882 0.409476 2.39544L5.01857 7.00016L0.413849 11.6092V11.6088Z"/>
+          </svg>
+        </button>
+        <div class="greeting__content-contact">
+          <form class="greeting__form modal__form">
+            <input name="city" type="text" placeholder="Місто">
+            <input name="adress" type="text" placeholder="Адреса (вулиця)">
+            <select name="transport">
+              <option value="nothing" disabled selected>
+                Тип транспорту
+              </option>
+              <option value="car">
+                Автотранспорт
+              </option>
+              <option value="bike">
+                Мототранспорт
+              </option>
+            </select>
+            <select name="time">
+              <option value="nothing" disabled selected>
+                Час
+              </option>
+              <option value="10:00">
+                10:00
+              </option>
+              <option value="10:30">
+                10:30
+              </option>
+              <option value="11:00">
+                11:00
+              </option>
+              <option value="11:30">
+                11:30
+              </option>
+            </select>
+            <input name="license" type="text" placeholder="Номер">
+            <textarea name="message" placeholder="Повідомлення"></textarea>
+            <label class="upload-label">
+              <input type="file" class="upload-input">
+              <img src="./images/upload-photo-and-video.svg" alt="Завантажити фото/відео">
+              <p>Завантажити фото/відео</p>
+            </label>
+            <button type="submit" class="button--submit">
+              НАДІСЛАТИ
+            </button>
+
+            <button class="close-modal close-modal--with-text">
+              до стандартної форми
+            </button>
+          </form>
         </div>
       </div>
     </section>

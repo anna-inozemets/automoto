@@ -1,19 +1,36 @@
-const fileInput = document.querySelector('.upload-input');
+// const fileInput = document.querySelector('.upload-input');
 
-fileInput.addEventListener('change', function() {
-  const fileLabel = document.querySelector('.upload-label')
+// fileInput.addEventListener('change', function() {
+//   const fileLabel = document.querySelector('.upload-label')
 
-  fileLabel.classList.remove('success');
-  fileLabel.classList.remove('fail');
+//   fileLabel.classList.remove('success');
+//   fileLabel.classList.remove('fail');
 
-  if (fileInput.files.length > 0) {
-    const file = fileInput.files[0];
+//   if (fileInput.files.length > 0) {
+//     const file = fileInput.files[0];
 
-    if (file.name.length !== 0) {
-      fileLabel.classList.add('success');
-    } else {
-      fileLabel.classList.add('fail');
-    }
+//     if (file.name.length !== 0) {
+//       fileLabel.classList.add('success');
+//     } else {
+//       fileLabel.classList.add('fail');
+//     }
+//   }
+// });
+
+const openBurgerMenu = document.querySelector('.header-mobile-button');
+const burgerMenu = document.querySelector('.header-mobile-nav');
+const logoImg = document.querySelector('.header-mobile-logo-img');
+
+openBurgerMenu.addEventListener('click', function() {
+  openBurgerMenu.classList.toggle('open');
+  burgerMenu.classList.toggle('open');
+
+  const isOpen = openBurgerMenu.classList.contains('open');
+
+  if (isOpen) {
+    logoImg.src = './images/logo--black.svg'
+  } else {
+    logoImg.src = './images/logo.svg'
   }
 });
 
@@ -37,18 +54,17 @@ allButton.addEventListener('click', () => {
   allButton.classList.add('active');
 });
 
-const modalWindow = document.querySelector('.modal')
-const modalWrappers = document.querySelectorAll('.modal__wrapper')
-const closeModalButtons = document.querySelectorAll('.close-modal')
+const modalWindow = document.querySelector('.modal');
+const modalWrappers = document.querySelectorAll('.modal__wrapper');
+const closeModalButtons = document.querySelectorAll('.close-modal');
+const closeAnotherModalButton = document.querySelector('.close-modal--with-text');
 const openConnectModal = document.querySelector('.open-modal--aditional');
 const openMainModal = document.querySelector('.open-modal-main');
-
-function toggleScrollBody() {
-  document.body.classList.toggle('no-scroll')
-}
+const openAnotherFormModal = document.querySelectorAll('.open-modal--another-form');
+const screenWidth = window.innerWidth || document.body.clientWidth;
 
 function openModalWindow(className) {
-  toggleScrollBody();
+  document.body.classList.add('no-scroll')
   modalWindow.classList.add('active')
 
   modalWrappers.forEach(modalWrapper => {
@@ -61,7 +77,7 @@ function openModalWindow(className) {
 }
 
 function closeModalWindow() {
-  toggleScrollBody();
+  document.body.classList.remove('no-scroll')
   modalWindow.classList.remove('active')
 }
 
@@ -70,16 +86,30 @@ closeModalButtons.forEach(closeModalButton => {
     closeModalWindow();
   })
 })
+closeAnotherModalButton.addEventListener('click', function(event) {
+  event.preventDefault();
+
+  if (screenWidth > 768) {
+    closeModalWindow()
+  } else {
+    openModalWindow('modal__wrapper--main')
+  }
+})
 openConnectModal.addEventListener('click', function() {
   openModalWindow('modal__wrapper--additional')
 })
 openMainModal.addEventListener('click', function() {
   openModalWindow('modal__wrapper--main')
 });
+openAnotherFormModal.forEach(button => {
+  button.addEventListener('click', function() {
+    openModalWindow('modal__wrapper--another-form');
+    console.log('click')
+  })
+})
 
 const buttonMoreContent = document.querySelector('.more-project-text');
 const moreContent = document.querySelector('.project__content-text');
-
 
 buttonMoreContent.addEventListener('click', function() {
   const isHidden = moreContent.classList.contains('hidden');
@@ -91,23 +121,6 @@ buttonMoreContent.addEventListener('click', function() {
   } else {
     moreContent.style.maxHeight = moreContent.scrollHeight + 'px';
     buttonMoreContent.innerHTML = 'Менше';
-  }
-});
-
-const openBurgerMenu = document.querySelector('.header-mobile-button');
-const burgerMenu = document.querySelector('.header-mobile-nav');
-const logoImg = document.querySelector('.header-mobile-logo-img');
-
-openBurgerMenu.addEventListener('click', function() {
-  openBurgerMenu.classList.toggle('open');
-  burgerMenu.classList.toggle('open');
-
-  const isOpen = openBurgerMenu.classList.contains('open');
-
-  if (isOpen) {
-    logoImg.src = './images/logo--black.svg'
-  } else {
-    logoImg.src = './images/logo.svg'
   }
 });
 
