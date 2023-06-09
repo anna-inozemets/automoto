@@ -51,17 +51,17 @@
           <div class="header-desktop__navigation-container">
             <ul class="header-desktop__navigation-list">
               <li>
-                <a href="">
+                <a href="./index.html">
                   ПРО ПРОЄКТ
                 </a>
               </li>
               <li>
-                <a href="">
+                <a href="./infoPage.html">
                   ПРАВИЛА ПОДАЧІ МАТЕРІАЛІВ
                 </a>
               </li>
               <li>
-                <a href="">
+                <a href="./blogPage.html">
                   БАЗА ДАНИХ
                 </a>
               </li>
@@ -83,19 +83,19 @@
         <div class="header-mobile-nav">
           <ul class="header-mobile-list">
             <li>
-              <a href="">ПРО ПРОЄКТ</a>
+              <a href="./index.html">ПРО ПРОЄКТ</a>
             </li>
             <li>
-              <a href="">ПРАВИЛА ПОДАЧІ МАТЕРІАЛІВ</a>
+              <a href="./infoPage.html">ПРАВИЛА ПОДАЧІ МАТЕРІАЛІВ</a>
             </li>
             <li>
-              <a href="">БАЗА ДАНИХ</a>
+              <a href="./blogPage.html">БАЗА ДАНИХ</a>
             </li>
             <li>
               <a href="">ГОЛОСУВАННЯ</a>
             </li>
             <li>
-              <button>ЗВОРОТНІЙ ЗВ’ЯЗОК</button>
+              <button class="open-modal--aditional">ЗВОРОТНІЙ ЗВ’ЯЗОК</button>
             </li>
           </ul>
           <div class="header-mobile-social">
@@ -214,6 +214,122 @@
         </div>
       </div>
     </section>
+    <section class="modal">
+      <div class="modal__wrapper modal__wrapper--additional hidden">
+        <button type="button" class="close-modal close-modal--additional">
+          <svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.413849 11.6088C-0.13277 12.1554 -0.13277 13.0431 0.413849 13.5898C0.960468 14.1364 1.84818 14.1364 2.39479 13.5898L6.99951 8.98067L11.609 13.5858C12.1557 14.1324 13.0429 14.1324 13.5895 13.5858C14.1362 13.0392 14.1362 12.1515 13.5895 11.6049L8.98046 7.00016L13.5852 2.39107C14.1318 1.84445 14.1318 0.956742 13.5852 0.410123C13.0386 -0.136496 12.1508 -0.136496 11.6042 0.410123L6.99951 5.01921L2.39042 0.414495C1.8438 -0.132124 0.956095 -0.132124 0.409476 0.414495C-0.137143 0.961114 -0.137143 1.84882 0.409476 2.39544L5.01857 7.00016L0.413849 11.6092V11.6088Z"/>
+          </svg>
+        </button>
+        <form action="" class="modal__form greeting__form">
+          <input name="name" type="text" placeholder="Ім'я">
+          <input name="phone" type="tel" placeholder="Телефон">
+          <input name="email" type="email" placeholder="E-main">
+          <textarea name="message" placeholder="Повідомлення"></textarea>
+          <button type="submit" class="button--submit">Надіслати</button>
+        </form>
+      </div>
+      <div class="modal__wrapper modal__wrapper--main hidden">
+        <button type="button" class="close-modal close-modal--main">
+          <svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.413849 11.6088C-0.13277 12.1554 -0.13277 13.0431 0.413849 13.5898C0.960468 14.1364 1.84818 14.1364 2.39479 13.5898L6.99951 8.98067L11.609 13.5858C12.1557 14.1324 13.0429 14.1324 13.5895 13.5858C14.1362 13.0392 14.1362 12.1515 13.5895 11.6049L8.98046 7.00016L13.5852 2.39107C14.1318 1.84445 14.1318 0.956742 13.5852 0.410123C13.0386 -0.136496 12.1508 -0.136496 11.6042 0.410123L6.99951 5.01921L2.39042 0.414495C1.8438 -0.132124 0.956095 -0.132124 0.409476 0.414495C-0.137143 0.961114 -0.137143 1.84882 0.409476 2.39544L5.01857 7.00016L0.413849 11.6092V11.6088Z"/>
+          </svg>
+        </button>
+        <div class="greeting__content-contact">
+          <form class="greeting__form modal__form">
+            <input name="city" type="text" placeholder="Місто">
+            <input name="adress" type="text" placeholder="Адреса (вулиця)">
+            <select name="transport">
+              <option value="nothing" disabled selected>
+                Тип транспорту
+              </option>
+              <option value="car">
+                Автотранспорт
+              </option>
+              <option value="bike">
+                Мототранспорт
+              </option>
+            </select>
+            <label class="upload-label">
+              <input type="file" class="upload-input">
+              <img src="./images/upload-photo-and-video.svg" alt="Завантажити фото/відео">
+              <p>Завантажити фото/відео</p>
+            </label>
+            <button type="submit" class="button--submit">
+              НАДІСЛАТИ
+            </button>
+            <button type="button" class="button--another-form open-modal open-modal--another-form">
+              РОЗШИРЕНА ФОРМА
+            </button>
+          </form>
+          <p>або</p>
+          <a href="">
+            Використайте бот Telegram
+            <span>
+              <svg width="35" height="35" viewBox="0 0 35 35" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.5 0C7.83266 0 0 7.83266 0 17.5C0 27.1673 7.83266 35 17.5 35C27.1673 35 35 27.1673 35 17.5C35 7.83266 27.1673 0 17.5 0ZM26.0948 11.9889L23.2228 25.5232C23.0111 26.4829 22.4395 26.7157 21.6421 26.2641L17.2671 23.0393L15.1573 25.0716C14.9244 25.3044 14.7268 25.502 14.2752 25.502L14.5857 21.0494L22.6935 13.7248C23.0464 13.4143 22.6159 13.2379 22.1502 13.5484L12.13 19.8569L7.81149 18.5091C6.87298 18.2127 6.85181 17.5706 8.00907 17.119L24.881 10.6129C25.6643 10.3306 26.3488 10.8034 26.0948 11.9889Z"/>
+              </svg>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <div class="modal__wrapper modal__wrapper--another-form hidden">
+        <button type="button" class="close-modal close-modal--main">
+          <svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.413849 11.6088C-0.13277 12.1554 -0.13277 13.0431 0.413849 13.5898C0.960468 14.1364 1.84818 14.1364 2.39479 13.5898L6.99951 8.98067L11.609 13.5858C12.1557 14.1324 13.0429 14.1324 13.5895 13.5858C14.1362 13.0392 14.1362 12.1515 13.5895 11.6049L8.98046 7.00016L13.5852 2.39107C14.1318 1.84445 14.1318 0.956742 13.5852 0.410123C13.0386 -0.136496 12.1508 -0.136496 11.6042 0.410123L6.99951 5.01921L2.39042 0.414495C1.8438 -0.132124 0.956095 -0.132124 0.409476 0.414495C-0.137143 0.961114 -0.137143 1.84882 0.409476 2.39544L5.01857 7.00016L0.413849 11.6092V11.6088Z"/>
+          </svg>
+        </button>
+        <div class="greeting__content-contact">
+          <form class="greeting__form modal__form">
+            <input name="city" type="text" placeholder="Місто">
+            <input name="adress" type="text" placeholder="Адреса (вулиця)">
+            <select name="transport">
+              <option value="nothing" disabled selected>
+                Тип транспорту
+              </option>
+              <option value="car">
+                Автотранспорт
+              </option>
+              <option value="bike">
+                Мототранспорт
+              </option>
+            </select>
+            <select name="time">
+              <option value="nothing" disabled selected>
+                Час
+              </option>
+              <option value="10:00">
+                10:00
+              </option>
+              <option value="10:30">
+                10:30
+              </option>
+              <option value="11:00">
+                11:00
+              </option>
+              <option value="11:30">
+                11:30
+              </option>
+            </select>
+            <input name="license" type="text" placeholder="Номер">
+            <textarea name="message" placeholder="Повідомлення"></textarea>
+            <label class="upload-label">
+              <input type="file" class="upload-input">
+              <img src="./images/upload-photo-and-video.svg" alt="Завантажити фото/відео">
+              <p>Завантажити фото/відео</p>
+            </label>
+            <button type="submit" class="button--submit">
+              НАДІСЛАТИ
+            </button>
+
+            <button class="close-modal close-modal--with-text">
+              до стандартної форми
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
   </main>
   <footer>
     <div class="container">
@@ -224,13 +340,13 @@
         <div class="footer__nav">
           <ul class="footer__nav-list">
             <li>
-              <a href="">Правила надання матеріалів</a>
+              <a href="./infoPage.html">Правила надання матеріалів</a>
             </li>
             <li>
               <a href="">Голосування</a>
             </li>
             <li>
-              <a href="">Зворотній зв’язок</a>
+              <a class="open-modal--aditional">Зворотній зв’язок</a>
             </li>
           </ul>
         </div>
@@ -238,6 +354,7 @@
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
   <script src="./index.js"></script>
 </body>
 </html>

@@ -1,6 +1,4 @@
-Fancybox.bind("[data-fancybox]", {
-  // Your custom options
-});
+Fancybox.bind("[data-fancybox]", {});
 
 const openBurgerMenu = document.querySelector('.header-mobile-button');
 const burgerMenu = document.querySelector('.header-mobile-nav');
@@ -21,29 +19,24 @@ openBurgerMenu.addEventListener('click', function() {
 
 const tabButtons = document.querySelectorAll('.cases__button');
 const tabContents = document.querySelectorAll('.cases__cards');
-const allButton = document.querySelector('#allButton');
 
-tabButtons.forEach((tabButton, index) => {
-  tabButton.addEventListener('click', () => {
-    tabButtons.forEach(btn => btn.classList.remove('active'));
-    tabContents.forEach(content => content.classList.remove('active'));
-    
-    tabButton.classList.add('active');
-    tabContents[index].classList.add('active');
+if (tabButtons) {
+  tabButtons.forEach((tabButton, index) => {
+    tabButton.addEventListener('click', () => {
+      tabButtons.forEach(btn => btn.classList.remove('active'));
+      tabContents.forEach(content => content.classList.remove('active'));
+      
+      tabButton.classList.add('active');
+      tabContents[index].classList.add('active');
+    });
   });
-});
-
-allButton.addEventListener('click', () => {
-  tabButtons.forEach(btn => btn.classList.remove('active'));
-  tabContents.forEach(content => content.classList.add('active'));
-  allButton.classList.add('active');
-});
+}
 
 const modalWindow = document.querySelector('.modal');
 const modalWrappers = document.querySelectorAll('.modal__wrapper');
 const closeModalButtons = document.querySelectorAll('.close-modal');
 const closeAnotherModalButton = document.querySelector('.close-modal--with-text');
-const openConnectModal = document.querySelector('.open-modal--aditional');
+const openConnectModal = document.querySelectorAll('.open-modal--aditional');
 const openMainModal = document.querySelector('.open-modal-main');
 const openAnotherFormModal = document.querySelectorAll('.open-modal--another-form');
 const screenWidth = window.innerWidth || document.body.clientWidth;
@@ -66,52 +59,64 @@ function closeModalWindow() {
   modalWindow.classList.remove('active')
 }
 
-closeModalButtons.forEach(closeModalButton => {
-  closeModalButton.addEventListener('click', function() {
-    closeModalWindow();
+if (modalWindow) {
+  closeModalButtons.forEach(closeModalButton => {
+    closeModalButton.addEventListener('click', function() {
+      closeModalWindow();
+    })
   })
-})
-closeAnotherModalButton.addEventListener('click', function(event) {
-  event.preventDefault();
+  closeAnotherModalButton.addEventListener('click', function(event) {
+    event.preventDefault();
+  
+    if (screenWidth > 768) {
+      closeModalWindow()
+    } else {
+      openModalWindow('modal__wrapper--main')
+    }
+  })
+  openConnectModal.forEach(button => {
+    button.addEventListener('click', function() {
+      openModalWindow('modal__wrapper--additional')
+    })
+  })
 
-  if (screenWidth > 768) {
-    closeModalWindow()
-  } else {
-    openModalWindow('modal__wrapper--main')
+  if (openMainModal) {
+    openMainModal.addEventListener('click', function() {
+      openModalWindow('modal__wrapper--main')
+    });
   }
-})
-openConnectModal.addEventListener('click', function() {
-  openModalWindow('modal__wrapper--additional')
-})
-openMainModal.addEventListener('click', function() {
-  openModalWindow('modal__wrapper--main')
-});
-openAnotherFormModal.forEach(button => {
-  button.addEventListener('click', function() {
-    openModalWindow('modal__wrapper--another-form');
-    console.log('click')
+  
+  openAnotherFormModal.forEach(button => {
+    button.addEventListener('click', function() {
+      openModalWindow('modal__wrapper--another-form');
+      console.log('click')
+    })
   })
-})
+}
 
 const buttonMoreContent = document.querySelector('.more-project-text');
 const moreContent = document.querySelector('.project__content-text');
 
-buttonMoreContent.addEventListener('click', function() {
-  const isHidden = moreContent.classList.contains('hidden');
-  moreContent.classList.toggle('hidden');
-
-  if (!isHidden) {
-    moreContent.style.maxHeight = `${270}px`;
-    buttonMoreContent.innerHTML = 'Більше';
-  } else {
-    moreContent.style.maxHeight = moreContent.scrollHeight + 'px';
-    buttonMoreContent.innerHTML = 'Менше';
-  }
-});
+if (buttonMoreContent) {
+  buttonMoreContent.addEventListener('click', function() {
+    const isHidden = moreContent.classList.contains('hidden');
+    moreContent.classList.toggle('hidden');
+  
+    if (!isHidden) {
+      moreContent.style.maxHeight = `${270}px`;
+      buttonMoreContent.innerHTML = 'Більше';
+    } else {
+      moreContent.style.maxHeight = moreContent.scrollHeight + 'px';
+      buttonMoreContent.innerHTML = 'Менше';
+    }
+  });
+}
 
 const imgToZoom = document.querySelector('.project__content-photo-img');
 
-imgToZoom.addEventListener('click', function() {
-  imgToZoom.classList.toggle('zoom');
-})
+if (imgToZoom) {
+  imgToZoom.addEventListener('click', function() {
+    imgToZoom.classList.toggle('zoom');
+  })
+}
 
