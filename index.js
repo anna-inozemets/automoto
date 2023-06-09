@@ -1,21 +1,6 @@
-// const fileInput = document.querySelector('.upload-input');
-
-// fileInput.addEventListener('change', function() {
-//   const fileLabel = document.querySelector('.upload-label')
-
-//   fileLabel.classList.remove('success');
-//   fileLabel.classList.remove('fail');
-
-//   if (fileInput.files.length > 0) {
-//     const file = fileInput.files[0];
-
-//     if (file.name.length !== 0) {
-//       fileLabel.classList.add('success');
-//     } else {
-//       fileLabel.classList.add('fail');
-//     }
-//   }
-// });
+Fancybox.bind("[data-fancybox]", {
+  // Your custom options
+});
 
 const openBurgerMenu = document.querySelector('.header-mobile-button');
 const burgerMenu = document.querySelector('.header-mobile-nav');
@@ -129,3 +114,4 @@ const imgToZoom = document.querySelector('.project__content-photo-img');
 imgToZoom.addEventListener('click', function() {
   imgToZoom.classList.toggle('zoom');
 })
+
